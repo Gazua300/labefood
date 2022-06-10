@@ -67,7 +67,7 @@ const Login = ()=>{
 				<input type='password' placeholder='Mínimo 6 caracteres' name='senha'
 				value={form.senha} onChange={mudaForm} ref={senha} required/>
 				<img src={`${OlhoFechado}`} ref={olho}
-				onClick={mudarOlho} />
+				onClick={mudarOlho} alt='Eye icon'/>
 				</div>
 				<div>
 				<button>Entrar</button>

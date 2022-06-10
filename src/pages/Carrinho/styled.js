@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+
+
 export const Container = styled.div`
 	margin: 23px;
 	line-height: 6vh;	
@@ -42,6 +44,7 @@ export const CardPratos = styled.div`
 		margin-left: 55vw;
 		border-radius: 10px;
 		background-color: #e8222e;
+		cursor: pointer;
 	}	
 `
 export const Qnt = styled.span`

@@ -5,8 +5,6 @@ import {Container, Categorias, Categoria,
 Restaurantes, SearchInput, Search, LogoPicture} from './styled'
 import RestaurantCard from '../../components/RestaurantCard'
 import SearchIcon from '../../img/search.png'
-import Carrinho from '../../img/shopping-cart.png'
-import Avatar from '../../img/avatar.png'
 import Logo from '../../img/logo-future-eats-invert.png'
 
 
@@ -14,7 +12,7 @@ import Logo from '../../img/logo-future-eats-invert.png'
 const Feed = ()=>{
 	const card = useRef(null)
 	const history = useNavigate()
-	const {requests, states, setters} = useContext(Context)
+	const {requests, states} = useContext(Context)
 	const restaurantes = states.restaurantes
 	const [restaurante, setRestaurante] = useState('')
 	const [busca, setBusca] = useState([])
@@ -24,7 +22,6 @@ const Feed = ()=>{
 	useEffect(()=>{
 		const token = localStorage.getItem('token')
 		if(token === null){
-			alert('Página inacessível!\nVocê não está logado.')
 			history('/login')
 		}
 		requests.listaDeRestaurantes()
@@ -55,7 +52,7 @@ const Feed = ()=>{
 //---Início da renderização-----------------------------------
 	return<Container ref={states.container}>			
 			<LogoPicture>
-				<img src={Logo}/>
+				<img src={Logo} alt='Logo future4'/>
 			</LogoPicture>
 				<Search src={`${SearchIcon}`}/>
 				<SearchInput type='text' placeholder='Restaurante'

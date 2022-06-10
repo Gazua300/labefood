@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+
+
 export const Container = styled.div`
 	margin: 23px;
 	line-height: 6vh;
@@ -8,10 +10,14 @@ export const Container = styled.div`
 		margin-bottom: 5px;
 	}
 `
-export const Header = styled.header`
+export const Cabecalho = styled.header`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	img{
+		width: 50px;
+		cursor: pointer;
+	}
 ` 
 export const SectionOne = styled.div`
 	display: flex;
@@ -25,7 +31,7 @@ export const SectionOne = styled.div`
 export const SectionTwo = styled.div`
 	display: flex;
 	justify-content: space-between;
-	background-color: whitesmoke;
+	background-color: rgb(175, 168, 168);
 `
 export const BtnHide = styled.button`
 	position: absolute;

@@ -1,5 +1,6 @@
 import {createGlobalStyle} from 'styled-components'
-import Logo from './img/logo-future-eats-invert.png'
+
+
 
 const GlobalStyle = createGlobalStyle`
   body{

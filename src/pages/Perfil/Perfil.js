@@ -1,14 +1,15 @@
 import React, {useContext, useEffect, useRef, useState} from 'react'
 import Context from '../../global/Context'
 import {useNavigate} from 'react-router-dom'
-import styled from 'styled-components'
 import axios from 'axios'
 import {url, headers} from '../../constants/urls'
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-import {Container, Header, SectionOne, SectionTwo, BtnHide,
-BtnForm, Pedidos} from './styled'
+import {Container, SectionOne, SectionTwo, BtnHide,
+BtnForm, Pedidos, Cabecalho} from './styled'
 // import EditIcon from '@material-ui/icons/Edit';
 import Footer from '../../components/Footer'
+import Header from '../../components/Header'
+import Logout from '../../img/logout.png'
 
 
 
@@ -79,11 +80,11 @@ const Perfil = ()=>{
 	
 
 	return<Container>
-			<Header>
-			<h3>Meu perfil</h3>
-			{/* <PersonOutlineIcon style={{fontSize:'2.5rem',
-			color:'lightgray'}} onClick={setters.logout} /> */}
-			</Header>
+			<Cabecalho>
+				<Header/>
+				<h1>Meu perfil</h1>
+				<img src={Logout} onClick={setters.logout} alt='Logout icon'/>
+			</Cabecalho>
 			<hr/>
 			<SectionOne>
 				<p>{perfil.name}<br/>
@@ -93,7 +94,7 @@ const Perfil = ()=>{
 			</SectionOne>
 			<SectionTwo>				
 				<span>
-				<div style={{color:'lightgray'}}>Endereço cadastrado</div>
+				<div>Endereço cadastrado</div>
 				{perfil.address}</span>
 				{/* <EditIcon onClick={()=> history('/address')}/> */}
 			</SectionTwo>			
@@ -121,9 +122,7 @@ const Perfil = ()=>{
 						SUBTOTAL: R$ {pedido.totalPrice}
 						</div>
 					  </Pedidos>
-			}) : <div className='loadContainer'>
-					<div className='loading'></div>
-					</div>}
+			}) : <h3 style={{textAlign:'center'}}>Você ainda não fez nenhum pedido</h3>}
 				<Footer/>
 		  </Container>
 

@@ -1,5 +1,5 @@
 import Context from './Context'
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useRef} from 'react'
 import axios from 'axios'
 import {url, headers} from '../constants/urls'
 import {useNavigate} from 'react-router-dom'
@@ -41,7 +41,7 @@ const GlobalState = (props) =>{
 	const logout = ()=>{
 		const decide = window.confirm('Tem certeza que quer sair da sua conta?')
 		if(decide){
-			const token = localStorage.removeItem('token')
+			localStorage.clear()
 			history('/')
 		}
 	}
@@ -110,8 +110,8 @@ const GlobalState = (props) =>{
 	const states = {restaurantes, cardapio, perfil, carro, produto, pedidos,
 		endereco, categorias, idRestaurante, prato, sacola}
 
-	const setters = {adicionarAoCarro, adicionar, logout,
-		popup, retiraPopup, setSacola, mudaProduto}
+	const setters = {adicionarAoCarro, adicionar, logout, popup, retiraPopup,
+		setSacola, mudaProduto}
 
 	const requests = {listaDeRestaurantes, detalhesRest, pegarPerfil,
 		historicoDePedidos, enderecoCadastrado}

@@ -5,6 +5,7 @@ import axios from 'axios'
 import {Container, SectionOne, SectionTwo,
 CardPratos, Picture, Total, Pagamento, Finalizar} from './styled'
 import Footer from '../../components/Footer'
+import Header from '../../components/Header'
 
 
 const Carrinho = ()=>{
@@ -75,7 +76,8 @@ const Carrinho = ()=>{
 
 	// }	
 
-	return <Container>			
+	return <Container>
+			<Header/>			
 			<h3>Meu carrinho</h3>			
 			<hr/>			
 			<SectionOne>
