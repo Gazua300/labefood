@@ -14,6 +14,7 @@ export const Cabecalho = styled.header`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 10vh;
 	img{
 		width: 50px;
 		cursor: pointer;
@@ -31,7 +32,13 @@ export const SectionOne = styled.div`
 export const SectionTwo = styled.div`
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	padding-right: 10px;
 	background-color: rgb(175, 168, 168);
+	.edit{
+		width: 25px;
+		cursor: pointer;
+	}
 `
 export const BtnHide = styled.button`
 	position: absolute;

@@ -2,10 +2,11 @@ import React, {useState, useEffect, useContext, useRef} from 'react'
 import {useNavigate} from 'react-router-dom'
 import Context from '../../global/Context'
 import {Container, Categorias, Categoria,
-Restaurantes, SearchInput, Search, LogoPicture} from './styled'
+Restaurantes, SearchInput, LogoPicture} from './styled'
 import RestaurantCard from '../../components/RestaurantCard'
-import SearchIcon from '../../img/search.png'
 import Logo from '../../img/logo-future-eats-invert.png'
+import ArrowBack from '../../img/arrowBack.png'
+import Avatar from '../../img/avatar.png'
 
 
 //Componente funcional-----------------------
@@ -52,9 +53,12 @@ const Feed = ()=>{
 //---Início da renderização-----------------------------------
 	return<Container ref={states.container}>			
 			<LogoPicture>
+				<img className='corner' src={ArrowBack} alt='Arrowback icon'
+					onClick={()=> history(-1)}/>
 				<img src={Logo} alt='Logo future4'/>
+				<img className='corner' src={Avatar} alt='Avatar icon'
+					onClick={()=> history('/perfil')}/>
 			</LogoPicture>
-				<Search src={`${SearchIcon}`}/>
 				<SearchInput type='text' placeholder='Restaurante'
 				value={restaurante} onChange={onChange} className='search'
 				autoFocus />

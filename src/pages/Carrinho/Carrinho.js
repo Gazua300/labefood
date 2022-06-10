@@ -1,14 +1,19 @@
 import React, {useContext, useEffect, useState} from 'react'
 import Context from '../../global/Context'
+import { useNavigate } from 'react-router-dom'
 import {url, headers} from '../../constants/urls'
 import axios from 'axios'
 import {Container, SectionOne, SectionTwo,
-CardPratos, Picture, Total, Pagamento, Finalizar} from './styled'
+CardPratos, Picture, Total, Pagamento, Finalizar, Cabecalho} from './styled'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import EditIcon from '../../img/edit.png'
+
+
 
 
 const Carrinho = ()=>{
+	const history = useNavigate()
 	const {states, setters, requests} = useContext(Context)
 	const sacola = states.sacola
 	const id = states.idRestaurante
@@ -77,16 +82,20 @@ const Carrinho = ()=>{
 	// }	
 
 	return <Container>
-			<Header/>			
-			<h3>Meu carrinho</h3>			
+			<Cabecalho>
+				<Header/>			
+				<h1>Meu carrinho</h1>
+				<div></div>	
+			</Cabecalho>		
 			<hr/>			
 			<SectionOne>
-				<div><div className='informativo'>Endereço para entrega</div>
-					{perfil.address}</div>
+				<div>Endereço para entrega<br/>{perfil.address}</div>
+				<img className='edit' src={EditIcon}
+					onClick={()=> history('/address')}/>
 			</SectionOne>
 			<SectionTwo>
 				<div className='restaurante'>{cardapio.name}</div>				
-				<div className='endereco'>{cardapio.address}</div>				
+				<div>{cardapio.address}</div>				
 			</SectionTwo>
 			<hr/>
 			{sacola.length > 0 ? sacola.map(item=>{

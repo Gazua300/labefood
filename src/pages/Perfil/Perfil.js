@@ -6,10 +6,10 @@ import {url, headers} from '../../constants/urls'
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import {Container, SectionOne, SectionTwo, BtnHide,
 BtnForm, Pedidos, Cabecalho} from './styled'
-// import EditIcon from '@material-ui/icons/Edit';
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import Logout from '../../img/logout.png'
+import EditIcon from '../../img/edit.png'
 
 
 
@@ -92,11 +92,10 @@ const Perfil = ()=>{
 				{perfil.cpf}</p>
 				{/* <EditIcon onClick={edite}/> */}
 			</SectionOne>
-			<SectionTwo>				
-				<span>
-				<div>Endereço cadastrado</div>
-				{perfil.address}</span>
-				{/* <EditIcon onClick={()=> history('/address')}/> */}
+			<SectionTwo>
+				<div>Endereço cadastrado<br/>{perfil.address}</div>
+				<img className='edit' src={EditIcon}
+					onClick={()=> history('/address')}/>
 			</SectionTwo>			
 			<div ref={editar} style={{display:'none'}}>
 			<hr/><BtnHide onClick={ocultar} >Ocultar</BtnHide>

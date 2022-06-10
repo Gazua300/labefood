@@ -9,18 +9,28 @@ export const Container = styled.div`
 		float: left;
 	}
 `
-
+export const Cabecalho = styled.header`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10vh;
+`
 export const SectionOne = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 10px;
 	background-color: rgb(175, 168, 168);
+	.edit{
+		width: 25px;
+		cursor: pointer
+	}
 `
 export const SectionTwo = styled.div`
 	margin-top: 10px;
 	.restaurante{
 		color: red;
 		font-size: 15pt;
-	}
-	.endereco{
-		color: lightgray;
 	}
 `
 export const CardPratos = styled.div`

@@ -1,10 +1,9 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext} from 'react'
 import Context from '../../global/Context'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import {url, headers} from '../../constants/urls'
-import {Titulo, Formulario, Container, Image,
-Botao} from './styled'
+import {Cabecalho, Formulario, Container, Botao} from './styled'
 import Header from '../../components/Header'
 
 
@@ -12,7 +11,6 @@ import Header from '../../components/Header'
 //---------Início do componente---------------------
 const Address = ()=>{
 	const {states, requests} = useContext(Context)
-	const [mostrar, setMostrar] = useState(false)
 	const history = useNavigate()
 	const endereco = states.endereco
 	const [form, setForm] = useState({
@@ -52,8 +50,11 @@ console.log(endereco)
 	
 //Início da renderização
 	return<Container>
-			<Header/>			
-			<Titulo>Meu endereço</Titulo>
+			<Cabecalho>
+				<Header/>			
+				<h1>Meu endereço</h1>
+				<div></div>	
+			</Cabecalho>
 			<Formulario onSubmit={cadastrarEndereco}>
 				<div>
 				<input type='text' autoFocus placeholder='Rua / Av.'

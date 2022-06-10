@@ -1,7 +1,16 @@
 import styled from 'styled-components'
 
+
+
+
 export const Container = styled.div`
 	text-align: center;
+`
+export const Cabecalho = styled.header`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10vh;
 `
 export const Botao = styled.button`
 	width: 82.6vw;
@@ -35,8 +44,4 @@ export const Formulario = styled.form`
 		left: 80%;
 		width: 32px;
 	}
-`
-export const Titulo = styled.div`
-	font-size: 1.4rem;
-	margin-bottom: 3vh;
 `

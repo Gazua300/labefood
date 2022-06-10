@@ -3,20 +3,21 @@ import styled from 'styled-components'
 
 
 export const LogoPicture = styled.div`
-	text-align: center;
-	margin: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 5px 10px 50px 10px;
 	img{
-		width: 80px;
+		width: 80px;		
+	}
+	.corner{
+		border-radius: 50%;
+		width: 50px;
+		cursor: pointer;
 	}
 `
 export const Container = styled.div`
 	text-align: center;	
-`
-export const Search = styled.img`
-	position: absolute;
-	left: 86%;
-	top: 14%;
-	width: 30px;
 `
 export const SearchInput = styled.input`
 	margin: auto;
