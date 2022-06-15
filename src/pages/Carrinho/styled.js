@@ -7,7 +7,7 @@ export const Container = styled.div`
 	line-height: 6vh;	
 	.pagar{
 		float: left;
-	}
+	}		
 `
 export const Cabecalho = styled.header`
 	display: flex;
@@ -75,12 +75,10 @@ export const Total = styled.div`
 	margin-left: 12px;
 `
 export const Pagamento = styled.div`
-	margin-bottom: 30px;
-	label{
+	margin: 20px 10px 80px;
+	select{
 		float: left;
-	}
-	input{
-		float: left;
+		padding: 5px;
 	}
 `
 export const Finalizar = styled.button`

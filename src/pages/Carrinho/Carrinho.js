@@ -20,9 +20,7 @@ const Carrinho = ()=>{
 	const pedidos = states.pedidos
 	const cardapio = states.cardapio
 	const perfil = states.perfil
-	const [valor, setValor] = useState([{
-			value: 'money'
-		}])
+	const [valor, setValor] = useState('')
 	
 
 	
@@ -103,8 +101,7 @@ const Carrinho = ()=>{
 						<Picture src={item.photoUrl}/>
 						<div className='sessao'>
 							<div className='nome'>{item.name}</div>
-							<small>{item.description}</small>
-							<br/>Quantidade: 
+							<small>{item.description}</small>							
 							<div className='preco'>R$ {item.price},00</div>							
 						</div>
 						<button onClick={()=> removerDoCarro(item)}>Remover</button>
@@ -112,15 +109,15 @@ const Carrinho = ()=>{
 			}) : <h3 style={{textAlign:'center'}} >Seu carrinho está vazio</h3>}
 			<Total>SUBTOTAL R$ {total()}</Total>
 			<div style={{textAlign:'center'}}>
-			<div style={{textAlign:'left',
-			marginLeft:'12px'}}>Forma de pagamento</div><hr/>
+			<hr/>
 			<Pagamento>
-			<input type='radio' id='pague' value='money'
-			onChange={mudaValor} checked={valor.value === 'money'} />
-			<label for='pague'>Dinheiro</label><br/>				
-			<input type='radio' id='pago' value='creditcard'
-			onChange={mudaValor} checked={valor.value === 'creditcard'} />
-			<label for='pago'>Cartão de crédito</label>
+				<select value={valor} onChange={mudaValor}>
+					<option defaultChecked>Formas de pagamento</option>
+					<option>Dinheiro</option>
+					<option>Crédito</option>
+					<option>Débito</option>
+					<option>Pix</option>
+				</select>
 			</Pagamento>
 			<Finalizar>Finalizar compra</Finalizar></div>			
 			<Footer/>

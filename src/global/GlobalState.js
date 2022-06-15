@@ -25,7 +25,7 @@ const GlobalState = (props) =>{
 	const mudaProduto = (e)=>{
 		setProduto(e.target.value)
 	}
-console.log(produto)
+	
 
 	const adicionar = (pt)=>{
 		setPrato(pt)
