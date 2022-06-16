@@ -32,6 +32,13 @@
 			Perfil:<br>
 			Clicando no ícone situado no canto superior direito da página de feeds(segunda imgem de cima pra baixo), ou no canto inferior direito das demais páginas o usuário é redirecionado para página do seu perfil.
 			<p><img src="imgREADME/profile.png" width='400'></p>
-			Nesta página está o nome, email, CPF e endereço cadastrado do usuário. Também fica registrado o histórico de pedidos, caso tenha feito algum.    
+			Nesta página está o nome, email, CPF e endereço cadastrado do usuário. No canto superior direito há um ícone para deslogar da conta. Também fica registrado o histórico de pedidos, caso tenha feito algum.    
 		</li>
 	</ul>
+
+
+>Link da aplicação: https://portfolio-labenu.herokuapp.com/
+
+>Login para acesso: email: astrodev@future4.com | senha: 123456
+
+>Obs.: Ao logar você verá um alerta de erro, você deve simplesmente recarregar a página.
