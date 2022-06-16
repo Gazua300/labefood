@@ -12,7 +12,7 @@ const Cardapio = ()=>{
 	const {states, setters} = useContext(Context)
 	const cardapio = states.cardapio
 	const pratos = cardapio.products
-console.log(states.sacola)
+
 
 	
 

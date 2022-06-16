@@ -35,13 +35,13 @@ const Carrinho = ()=>{
 	}
 
 
-	// const quantos = (id)=>{
-	// 	for(let item of states.carro){
-	// 	if(item.id === id){
-	// 		return item.qnt 
-	// 	}
-	//   }	
-	// } 	
+	const quantos = (id)=>{
+		for(let item of states.carro){
+		if(item.id === id){
+			return item.qnt 
+		}
+	  }	
+	} 	
 
 	const total = ()=>{
 		let soma = 0
@@ -65,19 +65,19 @@ const Carrinho = ()=>{
 	}
 
 	
-	// const finalizarCompra = ()=>{
-	// 	const body = [{
-	// 				 	id: states.idProduto,
-	// 					quantity: quantos(),			
-	// 					paymentMethod: valor
-	// 				}]
-	// 	axios.post(`${url}/restaurants/${id}/order`, body, headers).then(res=>{
-	// 		console.log(res.data)
-	// 	}).catch(err=>{
-	// 		alert(err.response.data.message)
-	// 	})
+	const finalizarCompra = ()=>{
+		const body = {
+					 	id: states.idProduto,
+						quantity: quantos(states.idProduto),			
+						paymentMethod: valor
+					}
+		axios.post(`${url}/restaurants/${id}/order`, body, headers).then(res=>{
+			console.log(res.data)
+		}).catch(err=>{
+			alert(err.response.data.message)
+		})
 
-	// }	
+	}	
 
 	return <Container>
 			<Cabecalho>
@@ -112,14 +112,11 @@ const Carrinho = ()=>{
 			<hr/>
 			<Pagamento>
 				<select value={valor} onChange={mudaValor}>
-					<option defaultChecked>Formas de pagamento</option>
-					<option>Dinheiro</option>
-					<option>Crédito</option>
-					<option>Débito</option>
-					<option>Pix</option>
+					<option value='money' defaultChecked>Dinheiro</option>
+					<option value='creditcard' >Cartão de crédito</option>					
 				</select>
 			</Pagamento>
-			<Finalizar>Finalizar compra</Finalizar></div>			
+			<Finalizar onClick={finalizarCompra}>Finalizar compra</Finalizar></div>			
 			<Footer/>
 		  </Container>
 }

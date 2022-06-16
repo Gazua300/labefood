@@ -21,15 +21,17 @@ const GlobalState = (props) =>{
 	const [sacola, setSacola] = useState([])
 
 
-
+	
 	const mudaProduto = (e)=>{
 		setProduto(e.target.value)
 	}
 	
 
 	const adicionar = (pt)=>{
+		const novoCarro = [...carro, pt]
 		setPrato(pt)
 		setProduto(pt.id)
+		setCarro(novoCarro)
 		popup.current.style.display = 'block'
 	}
 

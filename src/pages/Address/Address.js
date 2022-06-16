@@ -22,7 +22,7 @@ const Address = ()=>{
 	    complement: ''
 	})
 	
-console.log(endereco)
+
 	const mudaForm = (e)=>{
 		const {name, value} = e.target
 		setForm({...form, [name]: value})

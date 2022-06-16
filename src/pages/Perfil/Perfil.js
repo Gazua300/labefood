@@ -74,9 +74,6 @@ const Perfil = ()=>{
 	const expiracao = pedidos.map(pedido=>{
 		return pedido.expiresAt
 	})
-
-	let data = new Date(dataDoPedido)
-	console.log(data.toLocaleDateString())
 	
 
 	return<Container>
