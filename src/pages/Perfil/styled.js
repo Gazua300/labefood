@@ -8,6 +8,7 @@ export const Container = styled.div`
 	input{
 		height: 5vh;
 		margin-bottom: 5px;
+		padding-left: 10px;
 	}
 `
 export const Cabecalho = styled.header`
@@ -28,6 +29,11 @@ export const SectionOne = styled.div`
 	p{
 		line-height: 6vh;
 	}
+	.edit{
+		width: 25px;
+		cursor: pointer;
+		margin-right: 10px;
+	}
 `
 export const SectionTwo = styled.div`
 	display: flex;
@@ -45,10 +51,12 @@ export const BtnHide = styled.button`
 	left: 80%;
 	background-color: #e8222e;
 	border-radius: 10px;
+	cursor: pointer;
 `
 export const BtnForm = styled.button`	
 	background-color: #e8222e;
 	border-radius: 10px;
+	cursor: pointer;
 `
 export const Pedidos = styled.div`
 	border: 1px solid;

@@ -3,7 +3,6 @@ import Context from '../../global/Context'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import {url, headers} from '../../constants/urls'
-// import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import {Container, SectionOne, SectionTwo, BtnHide,
 BtnForm, Pedidos, Cabecalho} from './styled'
 import Footer from '../../components/Footer'
@@ -50,9 +49,13 @@ const Perfil = ()=>{
 			cpf: form.cpf
 		}
 
-		axios.put(`${url}/profile`, body, headers).then(res=>{
-			console.log(res.data)
-			requests.pegarPerfil()			
+		axios.put(`${url}/profile`, body, headers).then(res=>{			
+			requests.pegarPerfil()
+			setForm({
+				nome:'',
+				email:'',
+				cpf:''
+			})			
 		}).catch(err=>{
 			alert('Algo deu errado!\n'+err.response.data.message)
 		})
@@ -87,7 +90,7 @@ const Perfil = ()=>{
 				<p>{perfil.name}<br/>
 				{perfil.email}<br/>
 				{perfil.cpf}</p>
-				{/* <EditIcon onClick={edite}/> */}
+				<img className='edit' src={EditIcon} onClick={edite}/>
 			</SectionOne>
 			<SectionTwo>
 				<div>Endereço cadastrado<br/>{perfil.address}</div>
