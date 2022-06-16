@@ -14,16 +14,24 @@
 			Feeds:<br>
 			Na pagina de feeds você tem uma lista com os restaurantes, o valor do
 			frete e o tempo de entrega. No cabeçalho há uma caixa de texto para busca e logo abaixo
-			um filtro com as categorias dos respectivos restaurantes. Clicando no outdoor de cada restaurante
-			você é redirecionado para a pagina de detalhes. Onde poderá realizar seu pedido indicando
-			o produto e quantidade. Isso é feito clicando no botão adicionar, quando será 
+			um filtro com as categorias dos respectivos restaurantes.
+			<p><img src="imgREADME/feeds.png" width='400'></p>
+			Clicando no outdoor de cada restaurante
+			você é redirecionado para a pagina de detalhes, onde poderá realizar seu pedido indicando
+			o produto e a quantidade. Isso é feito clicando no botão adicionar, quando será 
 			aberta uma janela popup.
 			<p><img src="imgREADME/adicionar.png" width='400'></p>			
 		</li>
 		<li>
 			Carrinho:<br>
-			Na pagina de carrinho são dispostos os itens adicionados e seus respectivos valores, o subtotal, ou seja a soma de todos os valores dos produtos e as formas de pagamento.
+			Na pagina de carrinho está registrado o endereço para entrega, que é o endereço cadastrado pelo usuário, são dispostos também os itens adicionados e seus respectivos valores, o subtotal, ou seja, a soma de todos os valores dos produtos e a forma de pagamento.
 			<p><img src="imgREADME/carrinho.png" width='400'></p>
 			Ao fim de tudo está o botão para finalizar compra. 
+		</li>
+		<li>
+			Perfil:<br>
+			Clicando no ícone situado no canto superior direito da página de feeds(segunda imgem de cima pra baixo), ou no canto inferior direito das demais páginas o usuário é redirecionado para página do seu perfil.
+			<p><img src="imgREADME/profile.png" width='400'></p>
+			Nesta página está o nome, email, CPF e endereço cadastrado do usuário. Também fica registrado o histórico de pedidos, caso tenha feito algum.    
 		</li>
 	</ul>

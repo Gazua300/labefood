@@ -109,7 +109,7 @@ const Signup = ()=>{
 				onClick={mudarOlho2} alt='Eye icon'/>
 				</div>
 				<div>
-				<button>Criar</button>
+				<button>Criar</button><br/>
 				<button className="Text-Style-3" 
 				onClick={()=> history('/login')} >
 				  Voltar para login

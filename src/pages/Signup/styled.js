@@ -4,32 +4,36 @@ export const Container = styled.div`
 	text-align: center;
 `
 export const Image = styled.img`
-	margin-top: 12vh;
 `
 export const Formulario = styled.form`
 	line-height: 10vh;
 	input{
 		height: 7vh;
-		width: 80vw;
+		width: 40vw;
+		padding-left: 10px;
+		font-size: 13pt;
 	}
 	button{
-		width: 82.6vw;
+		width: 41.5vw;
 		height: 7vh;
 		font-weight: bold;
 		background-color: #e8222e;
 		border: none;
+		cursor: pointer;
 	}
 	img.olho{
 		position: absolute;
-		top: 72%;
-		left: 80%;
+		top: 59%;
+		left: 67%;
 		width: 32px;
+		cursor: pointer;
 	}
 	img.olho2{
 		position: absolute;
-		top: 82%;
-		left: 80%;
+		top: 69%;
+		left: 67%;
 		width: 32px;
+		cursor: pointer;
 	}
 `
 export const Titulo = styled.div`
