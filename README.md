@@ -8,7 +8,7 @@
 		<li>
 			Pagina inicial:<br>Tela com o logo do aplicatio, o qual te redireciona para a tela de login ao ser 
 			clicado.
-			<img src="imgREADME/home.png">
+			<p><img src="imgREADME/home.png"></p>
 		</li>
 		<li>
 			Feeds:<br>
