@@ -14,24 +14,20 @@ const GlobalState = (props) =>{
 	const [categorias, setCategorias] = useState([])
 	const [cardapio, setCardapio] = useState([])
 	const [perfil, setPerfil] = useState([])
-	const [produto, setProduto] = useState(0)
+	const [produto, setProduto] = useState(1)
 	const [pedidos, setPedidos] = useState([])
 	const [endereco, setEndereco] = useState({})
-	const [carro, setCarro] = useState([])
 	const [sacola, setSacola] = useState([])
 
 
-	
+
 	const mudaProduto = (e)=>{
 		setProduto(e.target.value)
 	}
 	
 
 	const adicionar = (pt)=>{
-		const novoCarro = [...carro, pt]
 		setPrato(pt)
-		setProduto(pt.id)
-		setCarro(novoCarro)
 		popup.current.style.display = 'block'
 	}
 
@@ -49,7 +45,7 @@ const GlobalState = (props) =>{
 		}
 	}
 	
-	
+		
 	const adicionarAoCarro = (pt)=>{
 		const novaSacola = [...sacola, pt]
 		setSacola(novaSacola)
@@ -110,7 +106,7 @@ const GlobalState = (props) =>{
 
 	
 
-	const states = {restaurantes, cardapio, perfil, carro, produto, pedidos,
+	const states = {restaurantes, cardapio, perfil, produto, pedidos,
 		endereco, categorias, idRestaurante, prato, sacola}
 
 	const setters = {adicionarAoCarro, adicionar, logout, popup, retiraPopup,

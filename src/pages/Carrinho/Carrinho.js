@@ -20,7 +20,7 @@ const Carrinho = ()=>{
 	const pedidos = states.pedidos
 	const cardapio = states.cardapio
 	const perfil = states.perfil
-	const [valor, setValor] = useState('')
+	const [valor, setValor] = useState('money')
 	
 
 	
@@ -34,15 +34,7 @@ const Carrinho = ()=>{
 		setValor(e.target.value)
 	}
 
-
-	const quantos = (id)=>{
-		for(let item of states.carro){
-		if(item.id === id){
-			return item.qnt 
-		}
-	  }	
-	} 	
-
+		
 	const total = ()=>{
 		let soma = 0
 		for(let valor of sacola){
@@ -67,8 +59,7 @@ const Carrinho = ()=>{
 	
 	const finalizarCompra = ()=>{
 		const body = {
-					 	id: states.idProduto,
-						quantity: quantos(states.idProduto),			
+						products: states.sacola,			
 						paymentMethod: valor
 					}
 		axios.post(`${url}/restaurants/${id}/order`, body, headers).then(res=>{
@@ -101,22 +92,25 @@ const Carrinho = ()=>{
 						<Picture src={item.photoUrl}/>
 						<div className='sessao'>
 							<div className='nome'>{item.name}</div>
-							<small>{item.description}</small>							
+							<small>{item.description}</small><br/>						
 							<div className='preco'>R$ {item.price},00</div>							
 						</div>
 						<button onClick={()=> removerDoCarro(item)}>Remover</button>
 					  </CardPratos>
 			}) : <h3 style={{textAlign:'center'}} >Seu carrinho está vazio</h3>}
-			<Total>SUBTOTAL R$ {total()}</Total>
+			<Total>
+				TOTAL: R$ {total()}
+			</Total>
 			<div style={{textAlign:'center'}}>
 			<hr/>
-			<Pagamento>
-				<select value={valor} onChange={mudaValor}>
-					<option value='money' defaultChecked>Dinheiro</option>
-					<option value='creditcard' >Cartão de crédito</option>					
-				</select>
-			</Pagamento>
-			<Finalizar onClick={finalizarCompra}>Finalizar compra</Finalizar></div>			
+				<Pagamento>
+					<select value={valor} onChange={mudaValor}>
+						<option value='money' defaultChecked>Dinheiro</option>
+						<option value='creditcard' >Cartão de crédito</option>					
+					</select>
+				</Pagamento>
+				<Finalizar onClick={finalizarCompra}>Finalizar compra</Finalizar>
+			</div>			
 			<Footer/>
 		  </Container>
 }
