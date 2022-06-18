@@ -11,7 +11,6 @@ import EditIcon from '../../img/edit.png'
 
 
 
-
 const Carrinho = ()=>{
 	const history = useNavigate()
 	const {states, setters, requests} = useContext(Context)
@@ -21,7 +20,7 @@ const Carrinho = ()=>{
 	const perfil = states.perfil
 	const [valor, setValor] = useState('money')
 	
-
+	
 	
 	useEffect(()=>{
 		requests.pegarPerfil()
@@ -68,7 +67,7 @@ const Carrinho = ()=>{
 					}
 
 		axios.post(`${url}/restaurants/${id}/order`, body, headers).then(res=>{
-			alert(res.data)
+			alert('Compra realizada com sucesso!')
 		}).catch(err=>{
 			alert(err.response.data.message)
 		})
