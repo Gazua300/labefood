@@ -59,17 +59,16 @@ export const BtnForm = styled.button`
 	cursor: pointer;
 `
 export const Pedidos = styled.div`
+	margin: 5px;
 	border: 1px solid;
 	border-radius: 10px;
-	padding: 10px;
+	padding-left: 10px;
 	.titulo{
 		color: red;
-	}
-	p{
-		font-size: 9pt;
+		font-size: 15pt;
 	}
 	.total{
 		font-weight: bolder;
-		font-size: 14pt;
+		font-size: 10pt;
 	}
 `

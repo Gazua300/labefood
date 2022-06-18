@@ -17,7 +17,6 @@ const Carrinho = ()=>{
 	const {states, setters, requests} = useContext(Context)
 	const sacola = states.sacola
 	const id = states.idRestaurante
-	const pedidos = states.pedidos
 	const cardapio = states.cardapio
 	const perfil = states.perfil
 	const [valor, setValor] = useState('money')
@@ -69,7 +68,7 @@ const Carrinho = ()=>{
 					}
 
 		axios.post(`${url}/restaurants/${id}/order`, body, headers).then(res=>{
-			res.data(res.data)
+			alert(res.data)
 		}).catch(err=>{
 			alert(err.response.data.message)
 		})
@@ -85,7 +84,7 @@ const Carrinho = ()=>{
 			<hr/>			
 			<SectionOne>
 				<div>Endereço para entrega<br/>{perfil.address}</div>
-				<img className='edit' src={EditIcon}
+				<img className='edit' src={EditIcon} alt='Edit icon'
 					onClick={()=> history('/address')}/>
 			</SectionOne>
 			<SectionTwo>

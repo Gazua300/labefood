@@ -19,7 +19,6 @@ const Perfil = ()=>{
 	const {states, setters, requests} = useContext(Context)
 	const pedidos = states.pedidos
 	const perfil = states.perfil
-	const [pedido, setPedido] = useState([]) 
 	const editar = useRef(null)
 	const [form, setForm] = useState({
 		nome:'',
@@ -71,12 +70,6 @@ const Perfil = ()=>{
 
 
 //---------------Renderização---------------------
-	const dataDoPedido = pedidos.map(pedido=>{
-		return pedido.createdAt
-	})
-	const expiracao = pedidos.map(pedido=>{
-		return pedido.expiresAt
-	})
 	
 
 	return<Container>
@@ -90,11 +83,11 @@ const Perfil = ()=>{
 				<p>{perfil.name}<br/>
 				{perfil.email}<br/>
 				{perfil.cpf}</p>
-				<img className='edit' src={EditIcon} onClick={edite}/>
+				<img className='edit' src={EditIcon} onClick={edite} alt='Edit Icon'/>
 			</SectionOne>
 			<SectionTwo>
 				<div>Endereço cadastrado<br/>{perfil.address}</div>
-				<img className='edit' src={EditIcon}
+				<img className='edit' src={EditIcon} alt='Edit icon'
 					onClick={()=> history('/address')}/>
 			</SectionTwo>			
 			<div ref={editar} style={{display:'none'}}>
@@ -111,13 +104,13 @@ const Perfil = ()=>{
 			</div>
 			<p style={{textAlign:'center'}}>Histórico de pedidos</p><hr/>
 			{pedidos.length > 0 ? pedidos.map(pedido=>{
-				return<Pedidos>
+				return<Pedidos key={pedido.createdAt}>
 						<div className='titulo'>
 							{pedido.restaurantName}
 						</div>
-						<p>Pedido feito em: {new Date(pedido.createdAt).toLocaleString()}<br/></p>
+						Pedido feito em: {new Date(pedido.createdAt).toLocaleString()}<br/>
 						<div className='total'>
-						SUBTOTAL: R$ {pedido.totalPrice}
+							SUBTOTAL: R$ {pedido.totalPrice}
 						</div>
 					  </Pedidos>
 			}) : <h3 style={{textAlign:'center'}}>Você ainda não fez nenhum pedido</h3>}
