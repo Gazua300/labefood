@@ -67,7 +67,7 @@ const Carrinho = ()=>{
 					}
 
 		axios.post(`${url}/restaurants/${id}/order`, body, headers).then(res=>{
-			alert('Compra realizada com sucesso!')
+			alert('Compra realizada com sucesso')
 		}).catch(err=>{
 			alert(err.response.data.message)
 		})
