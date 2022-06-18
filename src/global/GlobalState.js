@@ -10,12 +10,14 @@ const GlobalState = (props) =>{
 	const popup = useRef(null)
 	const [idRestaurante, setIdRestaurante] = useState('')
 	const [prato, setPrato] = useState({})
+	const [idPrato, setIdPrato] = useState('')
 	const [restaurantes, setRestaurantes] = useState([])
 	const [categorias, setCategorias] = useState([])
 	const [cardapio, setCardapio] = useState([])
 	const [perfil, setPerfil] = useState([])
 	const [produto, setProduto] = useState(1)
 	const [pedidos, setPedidos] = useState([])
+	const [pedido, setPedido] = useState({})
 	const [endereco, setEndereco] = useState({})
 	const [sacola, setSacola] = useState([])
 
@@ -27,6 +29,7 @@ const GlobalState = (props) =>{
 	
 
 	const adicionar = (pt)=>{
+		setIdPrato(pt.id)
 		setPrato(pt)
 		popup.current.style.display = 'block'
 	}
@@ -96,6 +99,17 @@ const GlobalState = (props) =>{
 	}
 
 
+	const pedidoAtivo = ()=>{
+		axios.get(`${url}/active-order`, headers).then(res=>{
+			setPedido(res.data.order)
+			const order = res.data.order
+			alert(`${order.restaurantName}\n\nPedido feito em: ${new Date(order.createdAt).toLocaleString()}\n\nExpira em: ${new Date(order.expiresAt).toLocaleString()}\n\nTotal: R$ ${order.totalPrice}`)
+		}).catch(err=>{
+			alert('Algo deu errado!\n'+err.response.data.message)
+		})
+	}
+
+
 	const enderecoCadastrado = ()=>{
 		axios(`${url}/profile/address`, headers).then(res=>{
 			setEndereco(res.data.address)
@@ -107,13 +121,13 @@ const GlobalState = (props) =>{
 	
 
 	const states = {restaurantes, cardapio, perfil, produto, pedidos,
-		endereco, categorias, idRestaurante, prato, sacola}
+		pedido, endereco, categorias, idRestaurante, prato, sacola, idPrato}
 
 	const setters = {adicionarAoCarro, adicionar, logout, popup, retiraPopup,
 		setSacola, mudaProduto}
 
 	const requests = {listaDeRestaurantes, detalhesRest, pegarPerfil,
-		historicoDePedidos, enderecoCadastrado}
+		historicoDePedidos, pedidoAtivo, enderecoCadastrado}
 	
 	
 

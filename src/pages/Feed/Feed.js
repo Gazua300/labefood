@@ -64,7 +64,7 @@ const Feed = ()=>{
 				autoFocus />
 			<Categorias>
 			{restaurantes.map(rest=>{
-				return <Categoria onClick={()=> filtrarCategoria(rest.category)}>
+				return <Categoria key={rest.id} onClick={()=> filtrarCategoria(rest.category)}>
 							{rest.category}
 					   </Categoria>
 			})}</Categorias>

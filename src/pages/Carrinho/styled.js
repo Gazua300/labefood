@@ -82,6 +82,7 @@ export const Pagamento = styled.div`
 	}
 `
 export const Finalizar = styled.button`
+	margin: 5px;
 	width: 88vw;
 	height: 7vh;
 	font-weight: bold;

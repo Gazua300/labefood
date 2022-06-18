@@ -109,14 +109,13 @@ const Perfil = ()=>{
 				<br/><BtnForm>Atualizar</BtnForm>				
 			</form>			
 			</div>
-			<p>Histórico de pedidos<hr/></p>
+			<p style={{textAlign:'center'}}>Histórico de pedidos</p><hr/>
 			{pedidos.length > 0 ? pedidos.map(pedido=>{
 				return<Pedidos>
 						<div className='titulo'>
 							{pedido.restaurantName}
 						</div>
-						<p>Data: {dataDoPedido}<br/>
-							Expiração: {expiracao}</p>
+						<p>Pedido feito em: {new Date(pedido.createdAt).toLocaleString()}<br/></p>
 						<div className='total'>
 						SUBTOTAL: R$ {pedido.totalPrice}
 						</div>
