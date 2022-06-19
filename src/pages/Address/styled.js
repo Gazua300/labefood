@@ -12,13 +12,6 @@ export const Cabecalho = styled.header`
 	justify-content: space-between;
 	margin-bottom: 10vh;
 `
-export const Botao = styled.button`
-	width: 82.6vw;
-	height: 7vh;
-	font-weight: bold;
-	background-color: #e8222e;
-	border: none;
-`
 export const Formulario = styled.form`
 	line-height: 10vh;
 	input{

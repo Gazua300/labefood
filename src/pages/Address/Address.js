@@ -1,18 +1,13 @@
-import React, {useState, useContext} from 'react'
-import Context from '../../global/Context'
+import React, {useState} from 'react'
 import axios from 'axios'
-import {useNavigate} from 'react-router-dom'
 import {url, headers} from '../../constants/urls'
-import {Cabecalho, Formulario, Container, Botao} from './styled'
+import {Cabecalho, Formulario, Container} from './styled'
 import Header from '../../components/Header'
 
 
 
 //---------Início do componente---------------------
 const Address = ()=>{
-	const {states, requests} = useContext(Context)
-	const history = useNavigate()
-	const endereco = states.endereco
 	const [form, setForm] = useState({
 		street: '',
 	    number: '',

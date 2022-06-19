@@ -23,6 +23,7 @@ const GlobalState = (props) =>{
 
 
 
+
 	const mudaProduto = (e)=>{
 		setProduto(e.target.value)
 	}
@@ -102,8 +103,6 @@ const GlobalState = (props) =>{
 	const pedidoAtivo = ()=>{
 		axios.get(`${url}/active-order`, headers).then(res=>{
 			setPedido(res.data.order)
-			const order = res.data.order
-			alert(`${order.restaurantName}\n\nPedido feito em: ${new Date(order.createdAt).toLocaleString()}\n\nExpira em: ${new Date(order.expiresAt).toLocaleString()}\n\nTotal: R$ ${order.totalPrice}`)
 		}).catch(err=>{
 			alert('Algo deu errado!\n'+err.response.data.message)
 		})

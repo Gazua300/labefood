@@ -18,12 +18,14 @@ const Carrinho = ()=>{
 	const id = states.idRestaurante
 	const cardapio = states.cardapio
 	const perfil = states.perfil
+	const pedido = states.pedido
 	const [valor, setValor] = useState('money')
 	
-	
+
 	
 	useEffect(()=>{
 		requests.pegarPerfil()
+		requests.pedidoAtivo()
 	}, [])
 	
 
@@ -72,7 +74,19 @@ const Carrinho = ()=>{
 			alert(err.response.data.message)
 		})
 
-	}	
+	}
+	
+	
+	const consultarPdidoAtivo = ()=>{
+		if(Object.keys(pedido).length === 0){
+			alert('Não há pedidos no momento')
+		}else{
+			alert(`${pedido.restaurantName}\n\nData do pedido: ${new Date(pedido.createdAt).toLocaleString()}\nExpiração: ${new Date(pedido.expiresAt).toLocaleString()}\nTotal: R$ ${pedido.totalPrice}`)
+		}
+	}
+
+
+
 
 	return <Container>
 			<Cabecalho>
@@ -114,7 +128,7 @@ const Carrinho = ()=>{
 					</select>
 				</Pagamento>
 				<Finalizar onClick={finalizarCompra}>Finalizar compra</Finalizar><br/>
-				<Finalizar onClick={requests.pedidoAtivo}>Consultar pedido ativo</Finalizar>
+				<Finalizar onClick={consultarPdidoAtivo}>Consultar pedido ativo</Finalizar>
 			</div>			
 			<Footer/>
 		  </Container>
