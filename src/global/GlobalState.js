@@ -110,7 +110,7 @@ const GlobalState = (props) =>{
 
 
 	const enderecoCadastrado = ()=>{
-		axios(`${url}/profile/address`, headers).then(res=>{
+		axios.get(`${url}/profile/address`, headers).then(res=>{
 			setEndereco(res.data.address)
 		}).catch(err=>{
 			alert('Algo deu errado.\n'+err.response.data.message)
