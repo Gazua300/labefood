@@ -37,7 +37,7 @@
 	</ul>
 
 
->Link da aplicação: https://portfolio-labenu.herokuapp.com/
+>Link da aplicação: http://plucky-crush.surge.sh/
 
 >Login para acesso: email: astrodev@future4.com | senha: 123456
 

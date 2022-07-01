@@ -2,8 +2,6 @@ import React, {useState, useRef} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {url} from '../../constants/urls'
 import Logo from '../../img/logo-future-eats-invert.png'
-import OlhoAberto from '../../img/senha-2.png'
-import OlhoFechado from '../../img/senha.png'
 import axios from 'axios'
 import {Titulo, Formulario, Container, Image} from './styled'
 
@@ -52,29 +50,6 @@ const Signup = ()=>{
 
 	}
 
-	
-
-	const mudarOlho2 = ()=>{
-		let zoi = olho2.current
-		if(zoi.src === OlhoAberto){
-			senha2.current.setAttribute('type', 'password')
-			zoi.src = OlhoFechado
-		}else{
-			senha2.current.setAttribute('type', 'text')
-			zoi.src = OlhoAberto			
-		}
-	}
-
-	const mudarOlho = ()=>{
-		let zoi = olho.current
-		if(zoi.src === OlhoAberto){
-			senha.current.setAttribute('type', 'password')
-			zoi.src = OlhoFechado
-		}else{
-			senha.current.setAttribute('type', 'text')
-			zoi.src = OlhoAberto			
-		}
-	}
 
 //Início da renderização	
 	return<Container>
@@ -98,15 +73,11 @@ const Signup = ()=>{
 				<input type='password' placeholder='Senha'
 				name='senha' value={form.senha} onChange={mudaForm}
 				ref={senha} required/>
-				<img src={`${OlhoFechado}`} ref={olho} className='olho'
-				onClick={mudarOlho} alt='Eye icon'/>
 				</div>
 				<div>
 				<input type='password' placeholder='Confirme a senha anterior'
 				name='confSenha' value={form.confSenha} onChange={mudaForm}
 				ref={senha2} required/>
-				<img src={`${OlhoFechado}`} ref={olho2} className='olho2'
-				onClick={mudarOlho2} alt='Eye icon'/>
 				</div>
 				<div>
 				<button>Criar</button><br/>

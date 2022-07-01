@@ -3,8 +3,6 @@ import {url} from '../../constants/urls'
 import axios from 'axios'
 import {useNavigate, Link} from 'react-router-dom'
 import Logo from '../../img/logo-future-eats-invert.png'
-import OlhoAberto from '../../img/senha-2.png'
-import OlhoFechado from '../../img/senha.png'
 import {Container, Image, Formulario, Titulo} from './styled'
 
 
@@ -43,16 +41,6 @@ const Login = ()=>{
 		})
 	}
 
-	const mudarOlho = ()=>{
-		let zoi = olho.current
-		if(zoi.src === OlhoAberto){
-			senha.current.setAttribute('type', 'password')
-			zoi.src = OlhoFechado
-		}else{
-			senha.current.setAttribute('type', 'text')
-			zoi.src = OlhoAberto			
-		}
-	}
 
 //Início da renderização
 	return<Container>
@@ -66,8 +54,6 @@ const Login = ()=>{
 				<div>
 				<input type='password' placeholder='Mínimo 6 caracteres' name='senha'
 				value={form.senha} onChange={mudaForm} ref={senha} required/>
-				<img src={`${OlhoFechado}`} ref={olho}
-				onClick={mudarOlho} alt='Eye icon'/>
 				</div>
 				<div>
 				<button>Entrar</button>

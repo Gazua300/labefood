@@ -22,20 +22,6 @@ export const Formulario = styled.form`
 		border: none;
 		cursor: pointer;
 	}
-	img{
-		position: absolute;
-		left: 67%;
-		top: 51%;
-		width: 32px;
-		cursor: pointer;
-
-		@media(max-width: 700px){
-			left: 65vw;
-		}
-		@media(max-width: 405px){
-			left: 63vw;
-		}
-	}
 `
 export const Titulo = styled.div`
 	margin-top: 8vh;
