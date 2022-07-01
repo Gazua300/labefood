@@ -20,6 +20,12 @@ const Popup = styled.div`
 	div{
 		margin: 10px;
 	}
+
+	@media(max-width: 575px){
+		height: 30vh;
+		width: 170px;
+
+	}
 		
 `
 const SessaoPedido = styled.div`

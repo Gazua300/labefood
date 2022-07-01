@@ -36,6 +36,7 @@ export const SectionTwo = styled.div`
 export const CardPratos = styled.div`
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	border: 1px solid;
 	border-radius: 10px;
 	margin: 10px;
@@ -51,11 +52,16 @@ export const CardPratos = styled.div`
 		margin-top: 20px;
 	}
 	button{
-		margin-left: 55vw;
 		border-radius: 10px;
 		background-color: #e8222e;
 		cursor: pointer;
-	}	
+	}
+	
+	@media(max-width: 460px){
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+	}
 `
 export const Qnt = styled.span`
 	position: absolute;
@@ -70,6 +76,15 @@ export const Picture = styled.img`
 	width: 120px;
 	height: 170px;	
 	border-radius: 10px;
+	@media(max-width: 460px){
+		width: 75vw;
+	}
+	@media(max-width: 388px){
+		width: 63vw;
+	}
+	@media(max-width: 260px){
+		width: 50vw;
+	}
 `
 export const Total = styled.div`
 	margin-left: 12px;
