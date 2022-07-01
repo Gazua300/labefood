@@ -63,7 +63,7 @@ const GlobalState = (props) =>{
 		axios.get(`${url}/restaurants`, headers).then(res=>{
 			setRestaurantes(res.data.restaurants)
 		}).catch(err=>{
-			alert('Algo deu errado!\n'+err.response)
+			alert('Algo deu errado!\n'+err.response.data.message)
 		})
 	}
 

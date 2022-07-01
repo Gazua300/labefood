@@ -29,11 +29,11 @@ export const Image = styled.img`
 `
 export const CardPratos = styled.div`
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	border: 1px solid;
 	border-radius: 10px;
 	margin: 10px;
-	// padding: 10px;
 	h4{
 		color: red;
 		margin-bottom: -10px;
@@ -45,16 +45,26 @@ export const CardPratos = styled.div`
 		margin: 10px;
 	}
 	button{
-		position: absolute;
-		left: 66%;
 		background-color: #e8222e;
 		border-radius: 10px;
 		cursor: pointer;
+		margin-right: 10px;
+	}
+
+	@media(max-width: 770px){
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
 	}
 `
 export const Picture = styled.img`
 	width: 100px;
 	height: 130px;	
 	border-radius: 10px;
+
+	@media(max-width: 770px){
+		width: 40vw;
+		height: 20vh;
+	}
 `
 
