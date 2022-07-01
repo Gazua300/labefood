@@ -27,6 +27,13 @@ export const Formulario = styled.form`
 		left: 67%;
 		width: 32px;
 		cursor: pointer;
+
+		@media(max-width: 700px){
+			left: 65vw;
+		}
+		@media(max-width: 405px){
+			left: 63vw;
+		}
 	}
 	img.olho2{
 		position: absolute;
@@ -34,6 +41,13 @@ export const Formulario = styled.form`
 		left: 67%;
 		width: 32px;
 		cursor: pointer;
+
+		@media(max-width: 700px){
+			left: 65vw;
+		}
+		@media(max-width: 405px){
+			left: 63vw;
+		}
 	}
 `
 export const Titulo = styled.div`
