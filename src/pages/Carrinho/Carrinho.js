@@ -58,22 +58,23 @@ const Carrinho = ()=>{
 
 	
 	const finalizarCompra = ()=>{
-		const body = {
-						products: [
-							{
-								id: states.idPrato,
-								quantity: states.produto
-							}
-						],
-						paymentMethod: valor	
+		if(states.produto > 0){
+			const body = {
+				products: [
+					{
+						id: states.idPrato,
+						quantity: states.produto
 					}
+				],
+				paymentMethod: valor	
+			}
 
 		axios.post(`${url}/restaurants/${id}/order`, body, headers).then(res=>{
 			alert('Compra realizada com sucesso')
 		}).catch(err=>{
-			alert(err.response.data.message)
+			alert(err.response.data)
 		})
-
+		}
 	}
 	
 	
@@ -128,7 +129,7 @@ const Carrinho = ()=>{
 					</select>
 				</Pagamento>
 				<Finalizar onClick={finalizarCompra}>Finalizar compra</Finalizar><br/>
-				<Finalizar onClick={consultarPdidoAtivo}>Consultar pedido ativo</Finalizar>
+				{/* <Finalizar onClick={consultarPdidoAtivo}>Consultar pedido ativo</Finalizar> */}
 			</div>			
 			<Footer/>
 		  </Container>
