@@ -37,7 +37,7 @@
 	</ul>
 
 
->Link da aplicação: http://plucky-crush.surge.sh/
+>Link da aplicação: https://ifuture-eyeb.onrender.com
 
 >Login para acesso: email: astrodev@future4.com | senha: 123456
 
