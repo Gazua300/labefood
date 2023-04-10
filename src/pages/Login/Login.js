@@ -40,7 +40,7 @@ const Login = ()=>{
 			localStorage.setItem('token', res.data.token)
 			history('/feed')
 		}).catch(err=>{
-			alert('Algo deu errado!\n'+err.response.data.message)
+			alert('Recarregue a página!\n'+err.response.data.message)
 		})
 	}
 

@@ -53,8 +53,7 @@ const Feed = ()=>{
 //---Início da renderização-----------------------------------
 	return<Container ref={states.container}>			
 			<LogoPicture>
-				<img className='corner' src={ArrowBack} alt='Arrowback icon'
-					onClick={()=> history(-1)}/>
+				<div/>
 				<img src={Logo} alt='Logo future4'/>
 				<img className='corner' src={Avatar} alt='Avatar icon'
 					onClick={()=> history('/perfil')}/>

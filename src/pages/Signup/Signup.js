@@ -44,7 +44,7 @@ const Signup = ()=>{
 			axios.post(`${url}/signup`, body).then(res=>{
 				history('/address')
 			}).catch(err=>{
-				alert('Algo deu errado!\n'+err.response.data.message)
+				alert('Recarregue a página!\n'+err.response.data.message)
 			})
 		}
 
