@@ -11,7 +11,10 @@ const Login = ()=>{
 	const history = useNavigate()
 	const olho = useRef(null)
 	const senha = useRef(null)
-	const [form, setForm] = useState({email:'', senha:''})
+	const [form, setForm] = useState({
+		email:'astrodev@future4.com',
+		senha:'123456'
+	})
 
 
 	useEffect(()=>{
