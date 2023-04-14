@@ -11,6 +11,10 @@ const Card = styled.div`
 	width: 50vw;
 	margin: auto;
 	margin-bottom: 40px;
+
+	@media(max-width: 600px){
+		width: 80vw;
+	}
 `
 const Texto = styled.div`
 	margin: 15px;
@@ -23,6 +27,10 @@ const Image = styled.img`
 	width: 50vw;
 	height: 50vh;
 	cursor: pointer;
+
+	@media(max-width: 600px){
+		width: 80vw;
+	}
 `
 
 const RestaurantCard = (props)=>{

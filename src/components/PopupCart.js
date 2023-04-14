@@ -22,8 +22,8 @@ const Popup = styled.div`
 	}
 
 	@media(max-width: 575px){
-		height: 30vh;
-		width: 170px;
+		height: 20vh;
+		width: 80vw;
 
 	}
 		

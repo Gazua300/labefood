@@ -11,9 +11,12 @@ export const LogoPicture = styled.div`
 		width: 80px;		
 	}
 	.corner{
-		border-radius: 50%;
 		width: 50px;
 		cursor: pointer;
+
+		@media(max-width: 600px){
+			width: 30px;
+		}
 	}
 `
 export const Container = styled.div`
@@ -37,7 +40,11 @@ export const Categorias = styled.div`
 	display: flex;
 	justify-content: center;
 	margin-bottom: 20px;
-	cursor: pointer;	
+	cursor: pointer;
+	
+	@media(max-width: 600px){
+		overflow-x: auto;
+	}
 `
 export const Categoria = styled.div`
 	margin: 10px;

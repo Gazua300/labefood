@@ -11,6 +11,10 @@ export const Card = styled.div`
 	border: 1px solid red;
 	width: 50vw;
 	margin: auto;
+
+	@media(max-width: 600px){
+		width: 80vw;
+	}
 `
 export const Texto = styled.div`
 	margin: 15px;
@@ -26,6 +30,10 @@ export const Tempo = styled.div`
 export const Image = styled.img`
 	width: 50vw;
 	height: 50vh;
+
+	@media(max-width: 600px){
+		width: 80vw;
+	}
 `
 export const CardPratos = styled.div`
 	display: flex;
@@ -63,8 +71,8 @@ export const Picture = styled.img`
 	border-radius: 10px;
 
 	@media(max-width: 770px){
-		width: 40vw;
-		height: 20vh;
+		width: 73vw;
+		height: 25vh;
 	}
 `
 

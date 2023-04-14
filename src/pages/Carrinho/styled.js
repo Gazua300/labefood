@@ -14,6 +14,12 @@ export const Cabecalho = styled.header`
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 10vh;
+
+	h1{
+		@media(max-width: 600px){
+			font-size: 20px;
+		}
+	}
 `
 export const SectionOne = styled.div`
 	display: flex;
@@ -104,6 +110,10 @@ export const Finalizar = styled.button`
 	background-color: #e8222e;
 	border: none;
 	cursor: pointer;
+
+	@media(max-width: 600px){
+		height: 4vh;
+	}
 `
 
 

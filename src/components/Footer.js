@@ -16,6 +16,12 @@ const Foot = styled.div`
 		cursor: pointer;
 		width: 50px;
 	}
+
+	.header-icon{
+		@media(max-width: 600px){
+			width: 30px;
+		}
+	}
 `
 //Componente funcional
 const Footer = ()=>{
@@ -23,9 +29,12 @@ const Footer = ()=>{
 	
 	
 	return<Foot>
-			 <img src={LogoHome} onClick={()=> history('/feed')} alt='Home icon'/>
-			 <img src={Carrinho} onClick={()=> history('/carrinho')} alt='Cart icon'/>
-			 <img src={Perfil} onClick={()=> history('/perfil')} alt='Avatar icon'/>
+			 <img className='header-icon' 
+			 	src={LogoHome} onClick={()=> history('/feed')} alt='Home icon'/>
+			 <img className='header-icon' 
+			 	src={Carrinho} onClick={()=> history('/carrinho')} alt='Cart icon'/>
+			 <img className='header-icon'
+			 	src={Perfil} onClick={()=> history('/perfil')} alt='Avatar icon'/>
 		  </Foot>
 }
 export default Footer

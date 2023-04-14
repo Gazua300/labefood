@@ -16,9 +16,22 @@ export const Cabecalho = styled.header`
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 10vh;
+
+	h1{
+		@media(max-width: 600px){
+			font-size: 20px;
+		}
+	}
+
 	img{
 		width: 50px;
 		cursor: pointer;
+	}
+
+	.header-icon{
+		@media(max-width: 600px){
+			width: 30px;
+		}
 	}
 ` 
 export const SectionOne = styled.div`

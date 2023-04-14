@@ -10,6 +10,12 @@ const Head = styled.header`
 		width: 50px;
 		cursor: pointer;
 	}
+
+	.header-icon{
+		@media(max-width: 600px){
+			width: 30px;
+		}
+	}
 `
 
 
@@ -18,7 +24,8 @@ const Header = ()=>{
 
 	return(
 		<Head>
-			<img src={ArrowBack} onClick={()=> history(-1)} alt='Arrowback icon'/>
+			<img className='header-icon' 
+				src={ArrowBack} onClick={()=> history(-1)} alt='Arrowback icon'/>
 		</Head>
 	)
 }

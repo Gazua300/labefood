@@ -76,7 +76,8 @@ const Perfil = ()=>{
 			<Cabecalho>
 				<Header/>
 				<h1>Meu perfil</h1>
-				<img src={Logout} onClick={setters.logout} alt='Logout icon'/>
+				<img className='header-icon' 
+					src={Logout} onClick={setters.logout} alt='Logout icon'/>
 			</Cabecalho>
 			<hr/>
 			<SectionOne>

@@ -5,7 +5,6 @@ import {Container, Categorias, Categoria,
 Restaurantes, SearchInput, LogoPicture} from './styled'
 import RestaurantCard from '../../components/RestaurantCard'
 import Logo from '../../img/logo-future-eats-invert.png'
-import ArrowBack from '../../img/arrowBack.png'
 import Avatar from '../../img/avatar.png'
 
 
@@ -82,20 +81,20 @@ const Feed = ()=>{
 
 {/*-----------Lista de restaurantes--------------------------------*/}
 			<Restaurantes ref={card}>
-			{restaurantes.length > 0 ?
-			 achado.map(restaurante=>{
-				return <RestaurantCard key={restaurante.id}
-						img={restaurante.logoUrl}
-						nome={restaurante.name}
-						id={restaurante.id}
-						entrega={restaurante.deliveryTime}
-						frete={restaurante.shipping}
-					   />
-			}) : <div className='loadContainer'>
-					<div className='loading'>
-					</div>
-				 </div>}
-				 </Restaurantes>				 				 	
+				{restaurantes.length > 0 ?
+				achado.map(restaurante=>{
+					return <RestaurantCard key={restaurante.id}
+							img={restaurante.logoUrl}
+							nome={restaurante.name}
+							id={restaurante.id}
+							entrega={restaurante.deliveryTime}
+							frete={restaurante.shipping}
+						/>
+				}) : <div className='loadContainer'>
+						<div className='loading'>
+						</div>
+					</div>}
+			</Restaurantes>				 				 	
 		  </Container>
 }
 export default Feed
